@@ -8,37 +8,33 @@ body {
 }
 
 .container {
-    max-width: 1200px;
+    max-width: 1500px;
     margin: 0 auto;
-    padding: 0 auto;
+    padding: 0px 30px;
 }
 
 .header {
-    margin: 20px;
+    margin: 10px;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
 .logotipe {
-    width: 100px;
-    height: 100px;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
 .logo {
-    width: 100px;
-    height: 100px;
+    width: 50px;
+    height: 50px;
 }
 
 .title {
-    width: 200px;
-    height: 100px;
     font-family: 'PS2P-Regular';
     color: white;
-    font-size: 30px;
+    font-size: 15px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -52,8 +48,8 @@ body {
 }
 
 .content {
-    margin: 20px;
-    height: 500px;
+    margin: 10px;
+    height: 1000px;
     font-family: 'PS2P-Regular';
     color: white;
     font-size: 25px;
@@ -66,53 +62,47 @@ body {
 
 
 .footer_1 {
-    margin: 20px;
-    height: 100px;
+    margin: 10px;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
+    gap: 30px;
 }
 
 .icon {
-    width: 60px;
-    height: 60px;
+    width: 25px;
     border-radius: 100%;
     border: 1px solid white;
     background-color: white;
-
 }
 
 .footer_2 {
-    margin: 20px;
-    height: 100px;
+    margin: 10px;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
 .footer_3 {
-    margin: 20px;
-    height: 100px;
+    margin: 10px;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
 .copyright {
-    height: 50px;
     font-family: 'PS2P-Regular';
     color: white;
-    font-size: 15px;
+    font-size: 7px;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
 .version {
-    height: 50px;
     font-family: 'PS2P-Regular';
     color: white;
-    font-size: 15px;
+    font-size: 7px;
     display: flex;
     align-items: center;
     justify-content: center;
