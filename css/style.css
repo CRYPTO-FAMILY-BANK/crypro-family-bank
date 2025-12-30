@@ -4,17 +4,20 @@
 }
 
 body {
-    background-color: black;
+    background-color: rgb(0, 0, 0);
+}
+
+.visor {
+   background-color: rgb(10, 10, 10);
 }
 
 .container {
     max-width: 1500px;
     margin: 0 auto;
-    padding: 0px 30px;
 }
 
 .header {
-    margin: 10px;
+    padding: 10px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -59,13 +62,13 @@ body {
 
 .line {
     display: block;
-    height: 1px;
+    height: 2px;
     background-color: white;
     width: 100%;
 }
 
 .content {
-    margin: 10px;
+    padding: 10px;
     height: 715px;
     font-family: 'PS2P-Regular';
     color: white;
@@ -79,7 +82,7 @@ body {
 
 
 .footer_1 {
-    margin: 10px;
+    padding: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -94,14 +97,7 @@ body {
 }
 
 .footer_2 {
-    margin: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.footer_3 {
-    margin: 10px;
+    padding: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
