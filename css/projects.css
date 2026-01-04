@@ -3,9 +3,26 @@
     src: url('../fonts/PressStart2P-Regular.ttf') format('truetype');
 }
 
+:root {
+    --border-color: #fff;
+    --text-color: #fff;
+    --bg-color: #000;
+    --accent-color: #fff;
+    --accent-text-color: #000;
+    --card-border: 2px solid var(--border-color);
+    --radius-small: 5px;
+    --radius-large: 50px;
+    --radius-xl: 10px;
+    --gap-small: 10px;
+    --gap-medium: 20px;
+    --padding-small: 10px;
+    --padding-medium: 24px;
+    --transition: all 0.3s ease;
+}
+
 body {
-    background-color: #000;
-    color: #fff;
+    background-color: var(--bg-color);
+    color: var(--text-color);
     font-family: 'PS2P-Regular', monospace;
     margin: 0;
     padding: 0;
@@ -15,38 +32,37 @@ body {
 .container {
     max-width: 1500px;
     margin: 0 auto;
-    padding: 10px;
+    padding: var(--padding-small);
 }
 
 .filter {
     display: flex;
     justify-content: center;
-    gap: 10px;
-    margin: 10px;
-    margin-bottom: 20px;
+    gap: var(--gap-small);
+    margin: var(--gap-small) 0 var(--gap-medium) 0;
 }
 
 .filter-item {
-    padding: 12px 24px;
-    border: 2px solid #fff;
-    border-radius: 50px;
+    padding: var(--padding-small) var(--padding-medium);
+    border: var(--card-border);
+    border-radius: var(--radius-large);
     cursor: pointer;
-    transition: background-color 0.3s ease, color 0.3s ease;
+    transition: var(--transition);
     text-align: center;
     white-space: nowrap;
 }
 
 .filter-item.active,
 .filter-item:hover {
-    background-color: #fff;
-    color: #000;
+    background-color: var(--accent-color);
+    color: var(--accent-text-color);
     font-weight: bold;
 }
 
 .vivod {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
-    gap: 20px;
+    gap: var(--gap-medium);
     padding: 0;
     list-style: none;
 }
@@ -56,12 +72,12 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    border: 2px solid white;
-    background-color: #000000;
-    color: #ffffff;
-    border-radius: 10px;
-    padding: 10px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: var(--card-border);
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    border-radius: var(--radius-xl);
+    padding: var(--padding-small);
+    transition: var(--transition);
     text-align: center;
 }
 
@@ -72,7 +88,7 @@ body {
 
 .project-card h3 {
     font-size: 15px;
-    margin: 0 0 10px 0;
+    margin: 0 0 var(--gap-small) 0;
     font-weight: normal;
 }
 
@@ -85,7 +101,6 @@ body {
     height: 350px;
     width: 400px;
     object-fit: cover;
-    border-radius: 5px;
-    margin-bottom: 10px;
-    border-radius: 10px;
+    border-radius: var(--radius-xl);
+    margin-bottom: var(--gap-small);
 }
