@@ -101,6 +101,7 @@ body {
     height: 350px;
     width: 400px;
     object-fit: cover;
+    pointer-events: none;
     border-radius: var(--radius-xl);
     margin-bottom: var(--gap-small);
 }
