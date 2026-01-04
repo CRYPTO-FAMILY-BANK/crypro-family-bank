@@ -82,6 +82,7 @@ body {
 .project-card img {
     height: 350px;
     width: 400px;
+    object-fit: cover;
     border-radius: 5px;
     margin-bottom: 10px;
 }
