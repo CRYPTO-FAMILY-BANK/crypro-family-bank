@@ -1,0 +1,8 @@
+@font-face {
+    font-family: 'PS2P-Regular';
+    src: url(../fonts/PressStart2P-Regular.ttf) format('truetype');
+}
+
+body {
+    background-color: rgb(0, 0, 0);
+}
