@@ -1,6 +1,8 @@
 @font-face {
-    font-family: 'PS2P-Regular';
+    font-family: 'PressStart2P';
     src: url('../fonts/PressStart2P-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
 }
 
 :root {
@@ -13,26 +15,33 @@
     --radius-small: 5px;
     --radius-large: 50px;
     --radius-xl: 10px;
-    --gap-small: 10px;
-    --gap-medium: 20px;
-    --padding-small: 10px;
-    --padding-medium: 24px;
+    --gap-small: 12px;
+    --gap-medium: 24px;
+    --padding-small: 12px;
+    --padding-medium: 28px;
     --transition: all 0.3s ease;
 }
 
 body {
     background-color: var(--bg-color);
     color: var(--text-color);
-    font-family: 'PS2P-Regular', monospace;
+    font-family: 'PressStart2P', monospace;
     margin: 0;
     padding: 0;
     line-height: 1.5;
 }
 
 .container {
-    max-width: 1500px;
+    max-width: 1200px;
     margin: 0 auto;
     padding: var(--padding-small);
+}
+
+.page-title {
+    text-align: center;
+    font-size: 28px;
+    margin: 40px 0 24px;
+    letter-spacing: 2px;
 }
 
 .filter {
@@ -40,6 +49,7 @@ body {
     justify-content: center;
     gap: var(--gap-small);
     margin: var(--gap-small) 0 var(--gap-medium) 0;
+    flex-wrap: wrap;
 }
 
 .filter-item {
@@ -50,6 +60,7 @@ body {
     transition: var(--transition);
     text-align: center;
     white-space: nowrap;
+    font-size: 12px;
 }
 
 .filter-item.active,
@@ -61,47 +72,146 @@ body {
 
 .vivod {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: var(--gap-medium);
     padding: 0;
-    list-style: none;
 }
 
-.project-card {
+.black-folder {
+    position: relative;
+    width: 100%;
+    height: 180px;
+    background: black;
+    border: 1px solid white;
+    border-radius: 10px 10px 0 0;
+    box-shadow:
+        0 3px 6px rgba(0, 0, 0, 0.25),
+        0 6px 12px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    cursor: pointer;
+}
+
+.black-folder:hover {
+    transform: translateY(-4px);
+    box-shadow:
+        0 5px 10px rgba(0, 0, 0, 0.3),
+        0 8px 16px rgba(0, 0, 0, 0.25);
+}
+
+.folder-tab {
     display: flex;
-    flex-direction: column;
     align-items: center;
-    justify-content: flex-start;
-    border: var(--card-border);
-    background-color: var(--bg-color);
-    color: var(--text-color);
-    border-radius: var(--radius-xl);
-    padding: var(--padding-small);
-    transition: var(--transition);
-    text-align: center;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    left: 24px;
+    width: 120px;
+    height: 48px;
+    background: rgb(30, 30, 30);
+    border: 1px solid white;
+    border-radius: 0px 0px 10px 10px;
+    box-shadow:
+        0 2px 5px rgba(0, 0, 0, 0.35),
+        0 4px 8px rgba(0, 0, 0, 0.25);
+    transform: translateY(-1px);
+    padding: 0 6px;
+    box-sizing: border-box;
 }
 
-.project-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-}
-
-.project-card h3 {
-    font-size: 15px;
-    margin: 0 0 var(--gap-small) 0;
-    font-weight: normal;
-}
-
-.project-packed p {
-    font-size: 10px;
+.folder-tab p {
     margin: 0;
+    font-size: 7px;
+    color: white;
+    font-family: 'PressStart2P', monospace;
+    text-align: center;
+    line-height: 1.2;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
-.project-card img {
-    height: 350px;
-    width: 400px;
-    object-fit: cover;
+.folder-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 64px;
+    height: 64px;
+    object-fit: contain;
     pointer-events: none;
-    border-radius: var(--radius-xl);
-    margin-bottom: var(--gap-small);
+}
+
+.vivod a {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+@media (max-width: 768px) {
+    .vivod {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--gap-medium);
+    }
+
+    .black-folder {
+        height: 170px;
+    }
+
+    .folder-tab {
+        left: 20px;
+        width: 100px;
+        height: 44px;
+    }
+
+    .folder-tab p {
+        font-size: 7px;
+    }
+
+    .folder-icon {
+        width: 56px;
+        height: 56px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: var(--padding-small);
+    }
+
+    .page-title {
+        font-size: 24px;
+        margin: 32px 0 20px;
+    }
+
+    .vivod {
+        grid-template-columns: 1fr;
+        gap: var(--gap-small);
+    }
+
+    .black-folder {
+        height: 150px;
+        max-width: 340px;
+        margin: 0 auto;
+    }
+
+    .folder-tab {
+        left: 24px;
+        width: 120px;
+        height: 48px;
+    }
+
+    .folder-tab p {
+        font-size: 7px;
+    }
+
+    .folder-icon {
+        width: 60px;
+        height: 60px;
+    }
+
+    .filter-item {
+        padding: 8px 16px;
+        font-size: 11px;
+    }
 }
