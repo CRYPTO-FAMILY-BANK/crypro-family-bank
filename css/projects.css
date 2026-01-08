@@ -92,6 +92,12 @@ body {
     cursor: pointer;
 }
 
+.black-folder img{
+    height: 50px;
+    width: 50px;
+    border-radius: 50px;
+}
+
 .black-folder:hover {
     transform: translateY(-4px);
     box-shadow:
