@@ -23,17 +23,14 @@ body {
     background-color: rgb(15, 15, 15);
 }
 
-/* Контейнер — теперь позиционированный родитель */
 .container {
     max-width: 1500px;
     margin: 0 auto;
     width: 100%;
     padding: 0 10px;
     position: relative;
-    /* ← обязательно для absolute-меню */
 }
 
-/* HEADER */
 .header {
     padding: 10px 0;
 }
@@ -80,7 +77,6 @@ body {
     border-radius: 45px;
 }
 
-/* LINE */
 .line {
     height: 2px;
     background-color: rgba(255, 255, 255, 0.7);
@@ -88,7 +84,6 @@ body {
     margin: 0;
 }
 
-/* DROPDOWN MENU — внутри контейнера, в правом верхнем углу */
 .dropdown-menu {
     position: absolute;
     top: 10px;
@@ -130,7 +125,6 @@ body {
     display: block;
 }
 
-/* MAIN */
 .main-content {
     flex: 1;
     display: flex;
@@ -148,7 +142,6 @@ body {
     color: white;
 }
 
-/* FOOTER */
 .footer {
     flex-shrink: 0;
     padding: 10px 0 0 0;
@@ -202,7 +195,6 @@ body {
     text-align: center;
 }
 
-/* MOBILE */
 @media screen and (max-width: 480px) {
     .title {
         font-size: 12px;
