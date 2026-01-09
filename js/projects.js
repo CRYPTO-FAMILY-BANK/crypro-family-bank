@@ -1,32 +1,25 @@
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', () => {
     const filterItems = document.querySelectorAll('.filter-item');
-    const folders = document.querySelectorAll('.black-folder');
-
-    function applyFilter(filter) {
-        folders.forEach(folder => {
-            const categories = folder.getAttribute('data-category');
-
-            if (filter === 'all') {
-                folder.style.display = 'block';
-                return;
-            }
-
-            if (categories && categories.split(' ').includes(filter)) {
-                folder.style.display = 'block';
-            } else {
-                folder.style.display = 'none';
-            }
-        });
-    }
+    const projectLinks = document.querySelectorAll('.vivod > a');
 
     filterItems.forEach(item => {
-        item.addEventListener('click', function () {
+        item.addEventListener('click', () => {
+            // Remove active class from all
             filterItems.forEach(i => i.classList.remove('active'));
-            this.classList.add('active');
-            const filter = this.getAttribute('data-filter');
-            applyFilter(filter);
+            // Add to clicked
+            item.classList.add('active');
+
+            const filter = item.dataset.filter;
+
+            projectLinks.forEach(link => {
+                const categories = link.dataset.category.split(' ');
+
+                if (filter === 'all' || categories.includes(filter)) {
+                    link.style.display = ''; // default display for grid item
+                } else {
+                    link.style.display = 'none';
+                }
+            });
         });
     });
-
-    applyFilter('all');
 });

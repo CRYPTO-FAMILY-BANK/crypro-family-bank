@@ -77,6 +77,12 @@ body {
     padding: 0;
 }
 
+.vivod a {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
 .black-folder {
     position: relative;
     width: 100%;
@@ -92,7 +98,7 @@ body {
     cursor: pointer;
 }
 
-.black-folder img{
+.black-folder img {
     height: 50px;
     width: 50px;
     border-radius: 50px;
@@ -148,12 +154,6 @@ body {
     pointer-events: none;
 }
 
-.vivod a {
-    text-decoration: none;
-    color: inherit;
-    display: block;
-}
-
 @media (max-width: 768px) {
     .vivod {
         grid-template-columns: repeat(2, 1fr);
@@ -168,10 +168,6 @@ body {
         left: 20px;
         width: 100px;
         height: 44px;
-    }
-
-    .folder-tab p {
-        font-size: 7px;
     }
 
     .folder-icon {
@@ -205,10 +201,6 @@ body {
         left: 24px;
         width: 120px;
         height: 48px;
-    }
-
-    .folder-tab p {
-        font-size: 7px;
     }
 
     .folder-icon {
